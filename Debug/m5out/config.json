@@ -1,0 +1,2671 @@
+{
+    "name": null, 
+    "sim_quantum": 0, 
+    "system": {
+        "membus": {
+            "point_of_coherency": true, 
+            "system": "system", 
+            "response_latency": 2, 
+            "cxx_class": "CoherentXBar", 
+            "max_routing_table_size": 512, 
+            "forward_latency": 4, 
+            "clk_domain": "system.clk_domain", 
+            "max_outstanding_snoops": 512, 
+            "point_of_unification": true, 
+            "width": 16, 
+            "master": {
+                "peer": [
+                    "system.memdev.pio"
+                ], 
+                "is_source": "True", 
+                "role": "GEM5 REQUESTER"
+            }, 
+            "power_state": {
+                "default_state": "UNDEFINED", 
+                "name": "power_state", 
+                "possible_states": [], 
+                "clk_gate_min": 1000, 
+                "clk_gate_bins": 20, 
+                "eventq_index": 0, 
+                "clk_gate_max": 1000000000000, 
+                "cxx_class": "PowerState", 
+                "path": "system.membus.power_state", 
+                "type": "PowerState", 
+                "leaders": []
+            }, 
+            "eventq_index": 0, 
+            "type": "CoherentXBar", 
+            "frontend_latency": 3, 
+            "slave": {
+                "peer": [
+                    "system.system_port"
+                ], 
+                "is_source": "False", 
+                "role": "GEM5 RESPONDER"
+            }, 
+            "snoop_filter": {
+                "name": "snoop_filter", 
+                "system": "system", 
+                "max_capacity": 8388608, 
+                "eventq_index": 0, 
+                "cxx_class": "SnoopFilter", 
+                "path": "system.membus.snoop_filter", 
+                "type": "SnoopFilter", 
+                "lookup_latency": 1
+            }, 
+            "power_model": [], 
+            "path": "system.membus", 
+            "snoop_response_latency": 4, 
+            "name": "membus", 
+            "use_default_range": false
+        }, 
+        "mmap_using_noreserve": false, 
+        "redirect_paths": [], 
+        "symbolfile": "", 
+        "thermal_components": [], 
+        "thermal_model": null, 
+        "cxx_class": "System", 
+        "apc": {
+            "cxx_class": "SubSystem", 
+            "DM0": {
+                "range": "2097152:2359296", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "DM0", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": true, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.DM0.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.DM0", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.dbus.master[0]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "ddr": {
+                "range": "268435456:4294967231", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "ddr", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": false, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.ddr.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.ddr", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.io_bus.master[0]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "thermal_domain": null, 
+            "eventq_index": 0, 
+            "timer1": {
+                "enable": false, 
+                "soc_link": null, 
+                "name": "timer1", 
+                "pio": {
+                    "peer": "system.apc.io_bus.master[4]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "pio_latency": 100000, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "system": "system", 
+                "eventq_index": 0, 
+                "timer_id": 1, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.timer1.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "Ucp2Timer", 
+                "path": "system.apc.timer1", 
+                "pio_addr": 80936960, 
+                "type": "Ucp2Timer", 
+                "timer_size_bytes": 32768, 
+                "cycles_trigger_timer": 1, 
+                "sysctrl": "system.apc.sysctrl"
+            }, 
+            "timer0": {
+                "enable": false, 
+                "soc_link": null, 
+                "name": "timer0", 
+                "pio": {
+                    "peer": "system.apc.io_bus.master[3]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "pio_latency": 100000, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "system": "system", 
+                "eventq_index": 0, 
+                "timer_id": 0, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.timer0.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "Ucp2Timer", 
+                "path": "system.apc.timer0", 
+                "pio_addr": 80904192, 
+                "type": "Ucp2Timer", 
+                "timer_size_bytes": 32768, 
+                "cycles_trigger_timer": 1, 
+                "sysctrl": "system.apc.sysctrl"
+            }, 
+            "csu": {
+                "pio": {
+                    "peer": "system.apc.io_bus.master[5]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "ShareMemPort": {
+                    "peer": [
+                        "system.apc.io_bus.slave[0]"
+                    ], 
+                    "is_source": "True", 
+                    "role": "GEM5 REQUESTER"
+                }, 
+                "system": "system", 
+                "IMPort": {
+                    "peer": [
+                        "system.apc.ape0.spu.stack_mem_bus.slave[2]"
+                    ], 
+                    "is_source": "True", 
+                    "role": "GEM5 REQUESTER"
+                }, 
+                "csu_mode": "APE", 
+                "cxx_class": "Ucp2Csu", 
+                "pio_addr": 4194304, 
+                "DMBase": [
+                    2097152, 
+                    2359296, 
+                    2621440, 
+                    2883584, 
+                    3145728, 
+                    3407872, 
+                    3670016, 
+                    3932160
+                ], 
+                "spu0": "system.apc.ape0.spu", 
+                "spu1": null, 
+                "ShareMemBase": 164626432, 
+                "pio_latency": 100000, 
+                "clk_domain": "system.clk_domain", 
+                "csu_size_bytes": 262144, 
+                "eventq_index": 0, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.csu.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "type": "Ucp2Csu", 
+                "MIMBase": [
+                    21474836480
+                ], 
+                "enable": false, 
+                "DDRPort": {
+                    "peer": [
+                        "system.apc.io_bus.slave[1]"
+                    ], 
+                    "is_source": "True", 
+                    "role": "GEM5 REQUESTER"
+                }, 
+                "MIMPort": {
+                    "peer": [
+                        "system.apc.ape0.mpu0.ibus.slave[1]"
+                    ], 
+                    "is_source": "True", 
+                    "role": "GEM5 REQUESTER"
+                }, 
+                "power_model": [], 
+                "path": "system.apc.csu", 
+                "DMPort": {
+                    "peer": [
+                        "system.apc.dbus.slave[0]"
+                    ], 
+                    "is_source": "True", 
+                    "role": "GEM5 REQUESTER"
+                }, 
+                "name": "csu", 
+                "DDRBase": 268435456, 
+                "IMBase": 0
+            }, 
+            "type": "SubSystem", 
+            "ape0_to_dev": {
+                "ranges": [
+                    "80904192:80936960", 
+                    "80936960:80969728", 
+                    "4194304:4456448", 
+                    "164626432:173015040", 
+                    "81068032:81084416", 
+                    "268435456:4294967231", 
+                    "72744960:72746480"
+                ], 
+                "slave": {
+                    "peer": "system.apc.ape0.spu.io_bus.master[2]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "name": "ape0_to_dev", 
+                "req_size": 16, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "delay": 0, 
+                "eventq_index": 0, 
+                "master": {
+                    "peer": "system.apc.io_bus.slave[2]", 
+                    "is_source": "True", 
+                    "role": "GEM5 REQUESTER"
+                }, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.ape0_to_dev.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "Bridge", 
+                "path": "system.apc.ape0_to_dev", 
+                "resp_size": 16, 
+                "type": "Bridge"
+            }, 
+            "io_bus": {
+                "slave": {
+                    "peer": [
+                        "system.apc.csu.ShareMemPort[0]", 
+                        "system.apc.csu.DDRPort[0]", 
+                        "system.apc.ape0_to_dev.master", 
+                        "system.apc.ape0.spu.imem_bridge.master"
+                    ], 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "name": "io_bus", 
+                "response_latency": 0, 
+                "forward_latency": 0, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "width": 128, 
+                "eventq_index": 0, 
+                "master": {
+                    "peer": [
+                        "system.apc.ddr.port", 
+                        "system.apc.shm_queue.pio", 
+                        "system.apc.sharemem.pio", 
+                        "system.apc.timer0.pio", 
+                        "system.apc.timer1.pio", 
+                        "system.apc.csu.pio", 
+                        "system.apc.sysctrl.pio"
+                    ], 
+                    "is_source": "True", 
+                    "role": "GEM5 REQUESTER"
+                }, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.io_bus.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "InternalBus", 
+                "path": "system.apc.io_bus", 
+                "type": "InternalBus", 
+                "use_default_range": false, 
+                "frontend_latency": 0
+            }, 
+            "shm_queue": {
+                "name": "shm_queue", 
+                "pio": {
+                    "peer": "system.apc.io_bus.master[1]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "pio_latency": 100000, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "system": "system", 
+                "eventq_index": 0, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.shm_queue.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "ShareMemQueue", 
+                "path": "system.apc.shm_queue", 
+                "pio_addr": 81068032, 
+                "type": "ShareMemQueue"
+            }, 
+            "path": "system.apc", 
+            "ape0": {
+                "start_after_load": true, 
+                "printer": {
+                    "name": "printer", 
+                    "pio": {
+                        "peer": "system.apc.ape0.spu.io_bus.master[0]", 
+                        "is_source": "False", 
+                        "role": "GEM5 RESPONDER"
+                    }, 
+                    "pio_latency": 100000, 
+                    "clk_domain": "system.clk_domain", 
+                    "power_model": [], 
+                    "system": "system", 
+                    "pio_size": 4, 
+                    "platform": null, 
+                    "eventq_index": 0, 
+                    "end_on_eot": false, 
+                    "cxx_class": "SimpleUart", 
+                    "device": "system.apc.ape0.terminal", 
+                    "path": "system.apc.ape0.printer", 
+                    "big_endian": false, 
+                    "power_state": {
+                        "default_state": "UNDEFINED", 
+                        "name": "power_state", 
+                        "possible_states": [], 
+                        "clk_gate_min": 1000, 
+                        "clk_gate_bins": 20, 
+                        "eventq_index": 0, 
+                        "clk_gate_max": 1000000000000, 
+                        "cxx_class": "PowerState", 
+                        "path": "system.apc.ape0.printer.power_state", 
+                        "type": "PowerState", 
+                        "leaders": []
+                    }, 
+                    "type": "SimpleUart", 
+                    "pio_addr": 4294967295
+                }, 
+                "mpu0": {
+                    "ibus": {
+                        "slave": {
+                            "peer": [
+                                "system.apc.ape0.mpu0.FetchPort", 
+                                "system.apc.csu.MIMPort[0]"
+                            ], 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "ibus", 
+                        "response_latency": 1, 
+                        "forward_latency": 1, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "width": 128, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": [
+                                "system.apc.ape0.mpu0.IM.port"
+                            ], 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.mpu0.ibus.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "InternalBus", 
+                        "path": "system.apc.ape0.mpu0.ibus", 
+                        "type": "InternalBus", 
+                        "use_default_range": false, 
+                        "frontend_latency": 0
+                    }, 
+                    "check_tests": false, 
+                    "cxx_class": "gem5::UCP2MPU", 
+                    "DMBase": [
+                        2097152, 
+                        2359296, 
+                        2621440, 
+                        2883584, 
+                        3145728, 
+                        3407872, 
+                        3670016, 
+                        3932160
+                    ], 
+                    "llvm_mc_path": "/home/rose/a/mcstudio/toolchain", 
+                    "FetchPort": {
+                        "peer": "system.apc.ape0.mpu0.ibus.slave[0]", 
+                        "is_source": "True", 
+                        "role": "GEM5 REQUESTER"
+                    }, 
+                    "system": "system", 
+                    "eventq_index": 0, 
+                    "power_state": {
+                        "default_state": "UNDEFINED", 
+                        "name": "power_state", 
+                        "possible_states": [], 
+                        "clk_gate_min": 1000, 
+                        "clk_gate_bins": 20, 
+                        "eventq_index": 0, 
+                        "clk_gate_max": 1000000000000, 
+                        "cxx_class": "PowerState", 
+                        "path": "system.apc.ape0.mpu0.power_state", 
+                        "type": "PowerState", 
+                        "leaders": []
+                    }, 
+                    "biu_bus": {
+                        "slave": {
+                            "peer": [
+                                "system.apc.ape0.mpu0.DataPort[0]", 
+                                "system.apc.ape0.mpu0.DataPort[1]", 
+                                "system.apc.ape0.mpu0.DataPort[2]", 
+                                "system.apc.ape0.mpu0.DataPort[3]"
+                            ], 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "biu_bus", 
+                        "response_latency": 1, 
+                        "forward_latency": 1, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "width": 64, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": [
+                                "system.apc.ape0.mpu0.biu_to_DM.slave"
+                            ], 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.mpu0.biu_bus.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "InternalBus", 
+                        "path": "system.apc.ape0.mpu0.biu_bus", 
+                        "type": "InternalBus", 
+                        "use_default_range": false, 
+                        "frontend_latency": 0
+                    }, 
+                    "type": "UCP2MPU", 
+                    "conflict": false, 
+                    "MIMBase": 21474836480, 
+                    "oupreg": false, 
+                    "DataPort": {
+                        "peer": [
+                            "system.apc.ape0.mpu0.biu_bus.slave[0]", 
+                            "system.apc.ape0.mpu0.biu_bus.slave[1]", 
+                            "system.apc.ape0.mpu0.biu_bus.slave[2]", 
+                            "system.apc.ape0.mpu0.biu_bus.slave[3]"
+                        ], 
+                        "is_source": "True", 
+                        "role": "GEM5 REQUESTER"
+                    }, 
+                    "biu_to_DM": {
+                        "ranges": [
+                            "2097152:2359296", 
+                            "2359296:2621440", 
+                            "2621440:2883584", 
+                            "2883584:3145728", 
+                            "3145728:3407872", 
+                            "3407872:3670016", 
+                            "3670016:3932160", 
+                            "3932160:4194304"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.mpu0.biu_bus.master[0]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "biu_to_DM", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.dbus.slave[1]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.mpu0.biu_to_DM.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.mpu0.biu_to_DM", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "power_model": [], 
+                    "pipeline_path": "./m5out/APC0/APE0/", 
+                    "timing_mode": false, 
+                    "IM": {
+                        "range": "21474836480:21475098624", 
+                        "latency": 2000, 
+                        "null": false, 
+                        "name": "IM", 
+                        "eventq_index": 0, 
+                        "kvm_map": true, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "latency_var": 0, 
+                        "init_randomized": false, 
+                        "bandwidth": "7.000000", 
+                        "conf_table_reported": true, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.mpu0.IM.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "SimpleMemory", 
+                        "path": "system.apc.ape0.mpu0.IM", 
+                        "image_file": "", 
+                        "hex8_file": "", 
+                        "type": "SimpleMemory", 
+                        "port": {
+                            "peer": "system.apc.ape0.mpu0.ibus.master[0]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "in_addr_map": true
+                    }, 
+                    "randreg": true, 
+                    "clk_domain": "system.clk_domain", 
+                    "trace_data_file": "", 
+                    "dir_name": "/home/rose/cpe_comp_2/Debug/", 
+                    "pipeline": false, 
+                    "mreg_data_file": "", 
+                    "name": "mpu0", 
+                    "core_id": 0, 
+                    "path": "system.apc.ape0.mpu0"
+                }, 
+                "name": "ape0", 
+                "mpus": [
+                    "system.apc.ape0.mpu0"
+                ], 
+                "IMHex": "", 
+                "vio": {
+                    "name": "vio", 
+                    "pio": {
+                        "peer": "system.apc.ape0.spu.io_bus.master[1]", 
+                        "is_source": "False", 
+                        "role": "GEM5 RESPONDER"
+                    }, 
+                    "pio_latency": 100000, 
+                    "clk_domain": "system.clk_domain", 
+                    "power_model": [], 
+                    "system": "system", 
+                    "eventq_index": 0, 
+                    "size_bytes": 8, 
+                    "power_state": {
+                        "default_state": "UNDEFINED", 
+                        "name": "power_state", 
+                        "possible_states": [], 
+                        "clk_gate_min": 1000, 
+                        "clk_gate_bins": 20, 
+                        "eventq_index": 0, 
+                        "clk_gate_max": 1000000000000, 
+                        "cxx_class": "PowerState", 
+                        "path": "system.apc.ape0.vio.power_state", 
+                        "type": "PowerState", 
+                        "leaders": []
+                    }, 
+                    "cxx_class": "Ucp2Vio", 
+                    "path": "system.apc.ape0.vio", 
+                    "pio_addr": 4294967248, 
+                    "type": "Ucp2Vio"
+                }, 
+                "ELF": "/home/rose/cpe_comp_2/Debug/cpe_comp_2.out", 
+                "spu": {
+                    "imem_base": 0, 
+                    "agu1_to_DM": {
+                        "ranges": [
+                            "2097152:2359296", 
+                            "2359296:2621440", 
+                            "2621440:2883584", 
+                            "2883584:3145728", 
+                            "3145728:3407872", 
+                            "3407872:3670016", 
+                            "3670016:3932160", 
+                            "3932160:4194304"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.agu1_bus.master[0]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu1_to_DM", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.dbus.slave[3]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu1_to_DM.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.agu1_to_DM", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "agu0_to_virt": {
+                        "ranges": [
+                            "67108864:72351744"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.agu0_bus.master[3]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu0_to_virt", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.ape0.spu.virtmem_bus.slave[0]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu0_to_virt.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.agu0_to_virt", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "agu0_to_DM": {
+                        "ranges": [
+                            "2097152:2359296", 
+                            "2359296:2621440", 
+                            "2621440:2883584", 
+                            "2883584:3145728", 
+                            "3145728:3407872", 
+                            "3407872:3670016", 
+                            "3670016:3932160", 
+                            "3932160:4194304"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.agu0_bus.master[0]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu0_to_DM", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.dbus.slave[2]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu0_to_DM.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.agu0_to_DM", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "IMHex": "", 
+                    "agu1_to_dev": {
+                        "ranges": [
+                            "80904192:80936960", 
+                            "80936960:80969728", 
+                            "4194304:4456448", 
+                            "164626432:173015040", 
+                            "81068032:81084416", 
+                            "4294967295:4294967296", 
+                            "4294967248:4294967256", 
+                            "268435456:4294967231", 
+                            "72744960:72746480"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.agu1_bus.master[1]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu1_to_dev", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.ape0.spu.io_bus.slave[1]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu1_to_dev.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.agu1_to_dev", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "system": "system", 
+                    "dmem_base": 0, 
+                    "agu1_to_virt": {
+                        "ranges": [
+                            "67108864:72351744"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.agu1_bus.master[3]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu1_to_virt", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.ape0.spu.virtmem_bus.slave[1]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu1_to_virt.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.agu1_to_virt", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "cxx_class": "PipelinedSPU", 
+                    "maxLoad": 16, 
+                    "IMData": "", 
+                    "ifetch": {
+                        "peer": "system.apc.ape0.spu.ibus.slave[0]", 
+                        "is_source": "True", 
+                        "role": "GEM5 REQUESTER"
+                    }, 
+                    "bypassOutput": false, 
+                    "blockOnMemorySwitch": false, 
+                    "IntRegInit": [
+                        1, 
+                        143890699, 
+                        2, 
+                        2209084015, 
+                        3, 
+                        4026526207, 
+                        4, 
+                        3666504258, 
+                        5, 
+                        1081455064, 
+                        6, 
+                        4290185325, 
+                        7, 
+                        2755762345, 
+                        8, 
+                        102144493, 
+                        9, 
+                        594698965, 
+                        10, 
+                        2843937246, 
+                        11, 
+                        3776169488, 
+                        12, 
+                        3998933122, 
+                        13, 
+                        1645346750, 
+                        14, 
+                        92107043, 
+                        15, 
+                        2579506583, 
+                        16, 
+                        1682984489, 
+                        17, 
+                        1285598040, 
+                        18, 
+                        2008826601, 
+                        19, 
+                        3327871080, 
+                        20, 
+                        1580455639, 
+                        21, 
+                        948353066, 
+                        22, 
+                        3641453050, 
+                        23, 
+                        807439083, 
+                        24, 
+                        3792265341, 
+                        25, 
+                        2647924777, 
+                        26, 
+                        2449917704, 
+                        27, 
+                        2824203818, 
+                        28, 
+                        2664146636, 
+                        29, 
+                        3725178751, 
+                        30, 
+                        2039196602, 
+                        31, 
+                        3398691578
+                    ], 
+                    "imem_bridge": {
+                        "ranges": [
+                            "268435456:4294967231"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.ibus.master[0]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "imem_bridge", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.io_bus.slave[3]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.imem_bridge.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.imem_bridge", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "clk_domain": "system.clk_domain", 
+                    "bypassCycleLimit": 1, 
+                    "VecRegInit": [
+                        0, 
+                        1765757059, 
+                        1757163453, 
+                        2157380761, 
+                        151088574, 
+                        2037466785, 
+                        3445278084, 
+                        3942724902, 
+                        2464539017, 
+                        445846587, 
+                        2859239533, 
+                        4115714680, 
+                        3899026568, 
+                        4009091435, 
+                        3488708959, 
+                        4170391099, 
+                        3532971402, 
+                        1, 
+                        3419397293, 
+                        1567531042, 
+                        3938683697, 
+                        2043590350, 
+                        2299048201, 
+                        2698687722, 
+                        1516479048, 
+                        2826586329, 
+                        4232705292, 
+                        3460516952, 
+                        1165236004, 
+                        295210074, 
+                        3757075012, 
+                        3166557727, 
+                        1523936462, 
+                        2094159469, 
+                        2, 
+                        4019525125, 
+                        538082723, 
+                        4287110506, 
+                        100281585, 
+                        3534731061, 
+                        3375760425, 
+                        480433479, 
+                        3991562570, 
+                        1547996325, 
+                        12054135, 
+                        1228551793, 
+                        3541744018, 
+                        1302911737, 
+                        1543052818, 
+                        2056340384, 
+                        1852175412, 
+                        3, 
+                        3589305400, 
+                        4131819419, 
+                        532947311, 
+                        926968122, 
+                        1196194907, 
+                        118123101, 
+                        2664721757, 
+                        2314115345, 
+                        2744815124, 
+                        175629892, 
+                        2252244312, 
+                        1208692484, 
+                        950154017, 
+                        2080045492, 
+                        1161971586, 
+                        1118906498
+                    ], 
+                    "power_state": {
+                        "default_state": "UNDEFINED", 
+                        "name": "power_state", 
+                        "possible_states": [], 
+                        "clk_gate_min": 1000, 
+                        "clk_gate_bins": 20, 
+                        "eventq_index": 0, 
+                        "clk_gate_max": 1000000000000, 
+                        "cxx_class": "PowerState", 
+                        "path": "system.apc.ape0.spu.power_state", 
+                        "type": "PowerState", 
+                        "leaders": []
+                    }, 
+                    "executeBranchDelay": 1, 
+                    "eventq_index": 0, 
+                    "agu1_to_stack": {
+                        "ranges": [
+                            "65536:262144"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.agu1_bus.master[2]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu1_to_stack", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.ape0.spu.stack_mem_bus.slave[1]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu1_to_stack.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.agu1_to_stack", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "pipelinePath": "./m5out/APC0/APE0/", 
+                    "type": "PipelinedSPU", 
+                    "Stack": {
+                        "range": "65536:262144", 
+                        "latency": 1000, 
+                        "null": false, 
+                        "name": "Stack", 
+                        "eventq_index": 0, 
+                        "kvm_map": true, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "latency_var": 0, 
+                        "init_randomized": false, 
+                        "bandwidth": "15.000000", 
+                        "conf_table_reported": true, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.Stack.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "SimpleMemory", 
+                        "path": "system.apc.ape0.spu.Stack", 
+                        "image_file": "", 
+                        "hex8_file": "", 
+                        "type": "SimpleMemory", 
+                        "port": {
+                            "peer": "system.apc.ape0.spu.stack_mem_bus.master[0]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "in_addr_map": true
+                    }, 
+                    "icache_size": 65536, 
+                    "flush_on_pc_events": false, 
+                    "io_bus": {
+                        "slave": {
+                            "peer": [
+                                "system.apc.ape0.spu.agu0_to_dev.master", 
+                                "system.apc.ape0.spu.agu1_to_dev.master"
+                            ], 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "io_bus", 
+                        "response_latency": 0, 
+                        "forward_latency": 0, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "width": 128, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": [
+                                "system.apc.ape0.printer.pio", 
+                                "system.apc.ape0.vio.pio", 
+                                "system.apc.ape0_to_dev.slave"
+                            ], 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.io_bus.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "InternalBus", 
+                        "path": "system.apc.ape0.spu.io_bus", 
+                        "type": "InternalBus", 
+                        "use_default_range": false, 
+                        "frontend_latency": 0
+                    }, 
+                    "exit_on_test_error": false, 
+                    "splitLSQ": true, 
+                    "power_model": [], 
+                    "ibus": {
+                        "slave": {
+                            "peer": [
+                                "system.apc.ape0.spu.ifetch"
+                            ], 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "ibus", 
+                        "response_latency": 1, 
+                        "forward_latency": 1, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "width": 128, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": [
+                                "system.apc.ape0.spu.imem_bridge.slave"
+                            ], 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.ibus.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "InternalBus", 
+                        "path": "system.apc.ape0.spu.ibus", 
+                        "type": "InternalBus", 
+                        "use_default_range": false, 
+                        "frontend_latency": 0
+                    }, 
+                    "stack_mem_bus": {
+                        "slave": {
+                            "peer": [
+                                "system.apc.ape0.spu.agu0_to_stack.master", 
+                                "system.apc.ape0.spu.agu1_to_stack.master", 
+                                "system.apc.csu.IMPort[0]"
+                            ], 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "stack_mem_bus", 
+                        "response_latency": 1, 
+                        "forward_latency": 1, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "width": 128, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": [
+                                "system.apc.ape0.spu.Stack.port"
+                            ], 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.stack_mem_bus.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "InternalBus", 
+                        "path": "system.apc.ape0.spu.stack_mem_bus", 
+                        "type": "InternalBus", 
+                        "use_default_range": false, 
+                        "frontend_latency": 0
+                    }, 
+                    "mpu": [
+                        "system.apc.ape0.mpu0"
+                    ], 
+                    "agu0_to_stack": {
+                        "ranges": [
+                            "65536:262144"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.agu0_bus.master[2]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu0_to_stack", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.ape0.spu.stack_mem_bus.slave[0]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu0_to_stack.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.agu0_to_stack", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "flushBufferOnBranch": false, 
+                    "path": "system.apc.ape0.spu", 
+                    "virtmem": {
+                        "range": "67108864:72351744", 
+                        "latency": 1000, 
+                        "null": false, 
+                        "name": "virtmem", 
+                        "eventq_index": 0, 
+                        "kvm_map": true, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "latency_var": 0, 
+                        "init_randomized": false, 
+                        "bandwidth": "7.000000", 
+                        "conf_table_reported": true, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.virtmem.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "SimpleMemory", 
+                        "path": "system.apc.ape0.spu.virtmem", 
+                        "image_file": "", 
+                        "hex8_file": "", 
+                        "type": "SimpleMemory", 
+                        "port": {
+                            "peer": "system.apc.ape0.spu.virtmem_bus.master[0]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "in_addr_map": true
+                    }, 
+                    "numJumpUpCaches": 2, 
+                    "lsqSize": 32, 
+                    "pipeline": false, 
+                    "mem_side": {
+                        "peer": [
+                            "system.apc.ape0.spu.agu0_bus.slave[0]", 
+                            "system.apc.ape0.spu.agu1_bus.slave[0]"
+                        ], 
+                        "is_source": "True", 
+                        "role": "GEM5 REQUESTER"
+                    }, 
+                    "name": "spu", 
+                    "fetchBufferSize": 4, 
+                    "wait_for_remote_gdb": true, 
+                    "core_id": 0, 
+                    "test_cases": [], 
+                    "check_memory_error": false, 
+                    "agu0_to_dev": {
+                        "ranges": [
+                            "80904192:80936960", 
+                            "80936960:80969728", 
+                            "4194304:4456448", 
+                            "164626432:173015040", 
+                            "81068032:81084416", 
+                            "4294967295:4294967296", 
+                            "4294967248:4294967256", 
+                            "268435456:4294967231", 
+                            "72744960:72746480"
+                        ], 
+                        "slave": {
+                            "peer": "system.apc.ape0.spu.agu0_bus.master[1]", 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu0_to_dev", 
+                        "req_size": 16, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "delay": 0, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": "system.apc.ape0.spu.io_bus.slave[0]", 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu0_to_dev.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "Bridge", 
+                        "path": "system.apc.ape0.spu.agu0_to_dev", 
+                        "resp_size": 16, 
+                        "type": "Bridge"
+                    }, 
+                    "inst_timing": [
+                        {
+                            "latency": [
+                                1, 
+                                0, 
+                                0, 
+                                0
+                            ], 
+                            "name": "inst_timing00", 
+                            "mask": 2114387968, 
+                            "value": 1107296256, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing00", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2
+                            ], 
+                            "name": "inst_timing01", 
+                            "mask": 2114387968, 
+                            "value": 1073741824, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing01", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2, 
+                                1
+                            ], 
+                            "name": "inst_timing02", 
+                            "mask": 2080833536, 
+                            "value": 1073807360, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing02", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2
+                            ], 
+                            "name": "inst_timing03", 
+                            "mask": 2080866304, 
+                            "value": 1073872896, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing03", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2
+                            ], 
+                            "name": "inst_timing04", 
+                            "mask": 2114420736, 
+                            "value": 1107558400, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing04", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                3
+                            ], 
+                            "name": "inst_timing05", 
+                            "mask": 2114420736, 
+                            "value": 1074003968, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing05", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2
+                            ], 
+                            "name": "inst_timing06", 
+                            "mask": 2080866304, 
+                            "value": 1074102272, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing06", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                0
+                            ], 
+                            "name": "inst_timing07", 
+                            "mask": 2118615040, 
+                            "value": 1145143296, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing07", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                0
+                            ], 
+                            "name": "inst_timing08", 
+                            "mask": 2114158592, 
+                            "value": 1174536192, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing08", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                18
+                            ], 
+                            "name": "inst_timing09", 
+                            "mask": 2080866304, 
+                            "value": 1074233344, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing09", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing10", 
+                            "mask": 1879048192, 
+                            "value": 1073741824, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing10", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing11", 
+                            "mask": 1614348288, 
+                            "value": 3145728, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing11", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                1
+                            ], 
+                            "name": "inst_timing12", 
+                            "mask": 1611202560, 
+                            "value": 0, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing12", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing13", 
+                            "mask": 1614348288, 
+                            "value": 3670016, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing13", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing14", 
+                            "mask": 1611203072, 
+                            "value": 524288, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing14", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing15", 
+                            "mask": 1886388224, 
+                            "value": 808452096, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing15", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                1
+                            ], 
+                            "name": "inst_timing16", 
+                            "mask": 1883242496, 
+                            "value": 805306368, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing16", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                1
+                            ], 
+                            "name": "inst_timing17", 
+                            "mask": 1611203584, 
+                            "value": 589824, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing17", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing18", 
+                            "mask": 1073741824, 
+                            "value": 0, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing18", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                0, 
+                                0, 
+                                0
+                            ], 
+                            "name": "inst_timing19", 
+                            "mask": 2114387968, 
+                            "value": 1912602624, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing19", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2
+                            ], 
+                            "name": "inst_timing20", 
+                            "mask": 2114387968, 
+                            "value": 1879048192, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing20", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2, 
+                                1
+                            ], 
+                            "name": "inst_timing21", 
+                            "mask": 2080833536, 
+                            "value": 1879113728, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing21", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2
+                            ], 
+                            "name": "inst_timing22", 
+                            "mask": 2080866304, 
+                            "value": 1879179264, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing22", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2
+                            ], 
+                            "name": "inst_timing23", 
+                            "mask": 2114420736, 
+                            "value": 1912864768, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing23", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                3
+                            ], 
+                            "name": "inst_timing24", 
+                            "mask": 2114420736, 
+                            "value": 1879310336, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing24", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                2
+                            ], 
+                            "name": "inst_timing25", 
+                            "mask": 2080866304, 
+                            "value": 1879408640, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing25", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                0
+                            ], 
+                            "name": "inst_timing26", 
+                            "mask": 2118615040, 
+                            "value": 1950449664, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing26", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                0
+                            ], 
+                            "name": "inst_timing27", 
+                            "mask": 2114158592, 
+                            "value": 1979842560, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing27", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                18
+                            ], 
+                            "name": "inst_timing28", 
+                            "mask": 2080866304, 
+                            "value": 1879539712, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing28", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing29", 
+                            "mask": 1879048192, 
+                            "value": 1879048192, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing29", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing30", 
+                            "mask": 1614348288, 
+                            "value": 3145728, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing30", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                1
+                            ], 
+                            "name": "inst_timing31", 
+                            "mask": 1611202560, 
+                            "value": 0, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing31", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing32", 
+                            "mask": 1614348288, 
+                            "value": 3670016, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing32", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing33", 
+                            "mask": 1611203072, 
+                            "value": 524288, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing33", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing34", 
+                            "mask": 1886388224, 
+                            "value": 808452096, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing34", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                1
+                            ], 
+                            "name": "inst_timing35", 
+                            "mask": 1883242496, 
+                            "value": 805306368, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing35", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1, 
+                                1
+                            ], 
+                            "name": "inst_timing36", 
+                            "mask": 1611203584, 
+                            "value": 589824, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing36", 
+                            "type": "SPUInstTiming"
+                        }, 
+                        {
+                            "latency": [
+                                1
+                            ], 
+                            "name": "inst_timing37", 
+                            "mask": 1073741824, 
+                            "value": 0, 
+                            "eventq_index": 0, 
+                            "cxx_class": "SPUInstTiming", 
+                            "path": "system.apc.ape0.spu.inst_timing37", 
+                            "type": "SPUInstTiming"
+                        }
+                    ], 
+                    "jumpUpCacheSize": 3, 
+                    "stack_reserved": 128, 
+                    "virtmem_bus": {
+                        "slave": {
+                            "peer": [
+                                "system.apc.ape0.spu.agu0_to_virt.master", 
+                                "system.apc.ape0.spu.agu1_to_virt.master"
+                            ], 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "virtmem_bus", 
+                        "response_latency": 1, 
+                        "forward_latency": 1, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "width": 128, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": [
+                                "system.apc.ape0.spu.virtmem.port"
+                            ], 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.virtmem_bus.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "InternalBus", 
+                        "path": "system.apc.ape0.spu.virtmem_bus", 
+                        "type": "InternalBus", 
+                        "use_default_range": false, 
+                        "frontend_latency": 0
+                    }, 
+                    "agu1_bus": {
+                        "slave": {
+                            "peer": [
+                                "system.apc.ape0.spu.mem_side[1]"
+                            ], 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu1_bus", 
+                        "response_latency": 1, 
+                        "forward_latency": 2, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "width": 128, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": [
+                                "system.apc.ape0.spu.agu1_to_DM.slave", 
+                                "system.apc.ape0.spu.agu1_to_dev.slave", 
+                                "system.apc.ape0.spu.agu1_to_stack.slave", 
+                                "system.apc.ape0.spu.agu1_to_virt.slave"
+                            ], 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu1_bus.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "InternalBus", 
+                        "path": "system.apc.ape0.spu.agu1_bus", 
+                        "type": "InternalBus", 
+                        "use_default_range": false, 
+                        "frontend_latency": 0
+                    }, 
+                    "fetchSize": 0, 
+                    "agu0_bus": {
+                        "slave": {
+                            "peer": [
+                                "system.apc.ape0.spu.mem_side[0]"
+                            ], 
+                            "is_source": "False", 
+                            "role": "GEM5 RESPONDER"
+                        }, 
+                        "name": "agu0_bus", 
+                        "response_latency": 1, 
+                        "forward_latency": 2, 
+                        "clk_domain": "system.clk_domain", 
+                        "power_model": [], 
+                        "width": 128, 
+                        "eventq_index": 0, 
+                        "master": {
+                            "peer": [
+                                "system.apc.ape0.spu.agu0_to_DM.slave", 
+                                "system.apc.ape0.spu.agu0_to_dev.slave", 
+                                "system.apc.ape0.spu.agu0_to_stack.slave", 
+                                "system.apc.ape0.spu.agu0_to_virt.slave"
+                            ], 
+                            "is_source": "True", 
+                            "role": "GEM5 REQUESTER"
+                        }, 
+                        "power_state": {
+                            "default_state": "UNDEFINED", 
+                            "name": "power_state", 
+                            "possible_states": [], 
+                            "clk_gate_min": 1000, 
+                            "clk_gate_bins": 20, 
+                            "eventq_index": 0, 
+                            "clk_gate_max": 1000000000000, 
+                            "cxx_class": "PowerState", 
+                            "path": "system.apc.ape0.spu.agu0_bus.power_state", 
+                            "type": "PowerState", 
+                            "leaders": []
+                        }, 
+                        "cxx_class": "InternalBus", 
+                        "path": "system.apc.ape0.spu.agu0_bus", 
+                        "type": "InternalBus", 
+                        "use_default_range": false, 
+                        "frontend_latency": 0
+                    }
+                }, 
+                "system": "system", 
+                "terminal": {
+                    "name": "terminal", 
+                    "number": 0, 
+                    "outfile": "stdoutput", 
+                    "eventq_index": 0, 
+                    "cxx_class": "Terminal", 
+                    "path": "system.apc.ape0.terminal", 
+                    "type": "Terminal", 
+                    "port": 33527
+                }, 
+                "eventq_index": 0, 
+                "cxx_class": "MaPUAPE", 
+                "load_elf_sections": true, 
+                "path": "system.apc.ape0", 
+                "type": "MaPUAPE"
+            }, 
+            "name": "apc", 
+            "dbus": {
+                "slave": {
+                    "peer": [
+                        "system.apc.csu.DMPort[0]", 
+                        "system.apc.ape0.mpu0.biu_to_DM.master", 
+                        "system.apc.ape0.spu.agu0_to_DM.master", 
+                        "system.apc.ape0.spu.agu1_to_DM.master"
+                    ], 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "name": "dbus", 
+                "response_latency": 4, 
+                "forward_latency": 1, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "width": 128, 
+                "eventq_index": 0, 
+                "master": {
+                    "peer": [
+                        "system.apc.DM0.port", 
+                        "system.apc.DM1.port", 
+                        "system.apc.DM2.port", 
+                        "system.apc.DM3.port", 
+                        "system.apc.DM4.port", 
+                        "system.apc.DM5.port", 
+                        "system.apc.DM6.port", 
+                        "system.apc.DM7.port"
+                    ], 
+                    "is_source": "True", 
+                    "role": "GEM5 REQUESTER"
+                }, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.dbus.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "InternalBus", 
+                "path": "system.apc.dbus", 
+                "type": "InternalBus", 
+                "use_default_range": false, 
+                "frontend_latency": 0
+            }, 
+            "dev": {
+                "timer1": "system.apc.timer1", 
+                "name": "dev", 
+                "eventq_index": 0, 
+                "ip": "127.0.0.1", 
+                "timer0": "system.apc.timer0", 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "APCNum": 0, 
+                "FullSys": false, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.dev.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "DevController", 
+                "csu": "system.apc.csu", 
+                "path": "system.apc.dev", 
+                "type": "DevController", 
+                "port": 8888
+            }, 
+            "sharemem": {
+                "mem_size_bytes": 8388608, 
+                "name": "sharemem", 
+                "pio": {
+                    "peer": "system.apc.io_bus.master[2]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "pio_latency": 100000, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "system": "system", 
+                "queue": "system.apc.shm_queue", 
+                "eventq_index": 0, 
+                "lock_unit_bytes": 128, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.sharemem.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "Ucp2ShareMem", 
+                "path": "system.apc.sharemem", 
+                "pio_addr": 164626432, 
+                "type": "Ucp2ShareMem", 
+                "port": 8888, 
+                "use_file": false
+            }, 
+            "DM1": {
+                "range": "2359296:2621440", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "DM1", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": true, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.DM1.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.DM1", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.dbus.master[1]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "DM2": {
+                "range": "2621440:2883584", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "DM2", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": true, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.DM2.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.DM2", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.dbus.master[2]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "DM3": {
+                "range": "2883584:3145728", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "DM3", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": true, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.DM3.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.DM3", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.dbus.master[3]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "DM4": {
+                "range": "3145728:3407872", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "DM4", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": true, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.DM4.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.DM4", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.dbus.master[4]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "DM5": {
+                "range": "3407872:3670016", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "DM5", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": true, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.DM5.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.DM5", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.dbus.master[5]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "DM6": {
+                "range": "3670016:3932160", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "DM6", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": true, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.DM6.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.DM6", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.dbus.master[6]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "DM7": {
+                "range": "3932160:4194304", 
+                "latency": 1000, 
+                "null": false, 
+                "name": "DM7", 
+                "eventq_index": 0, 
+                "kvm_map": true, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "latency_var": 0, 
+                "init_randomized": true, 
+                "bandwidth": "15.000000", 
+                "conf_table_reported": true, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.DM7.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "SimpleMemory", 
+                "path": "system.apc.DM7", 
+                "image_file": "", 
+                "hex8_file": "", 
+                "type": "SimpleMemory", 
+                "port": {
+                    "peer": "system.apc.dbus.master[7]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "in_addr_map": true
+            }, 
+            "sysctrl": {
+                "enable": false, 
+                "soc_link": null, 
+                "name": "sysctrl", 
+                "pio": {
+                    "peer": "system.apc.io_bus.master[6]", 
+                    "is_source": "False", 
+                    "role": "GEM5 RESPONDER"
+                }, 
+                "pio_latency": 100000, 
+                "apc_id": 0, 
+                "clk_domain": "system.clk_domain", 
+                "power_model": [], 
+                "system": "system", 
+                "eventq_index": 0, 
+                "power_state": {
+                    "default_state": "UNDEFINED", 
+                    "name": "power_state", 
+                    "possible_states": [], 
+                    "clk_gate_min": 1000, 
+                    "clk_gate_bins": 20, 
+                    "eventq_index": 0, 
+                    "clk_gate_max": 1000000000000, 
+                    "cxx_class": "PowerState", 
+                    "path": "system.apc.sysctrl.power_state", 
+                    "type": "PowerState", 
+                    "leaders": []
+                }, 
+                "cxx_class": "Ucp2SysCtrl", 
+                "csu": "system.apc.csu", 
+                "path": "system.apc.sysctrl", 
+                "pio_addr": 72744960, 
+                "type": "Ucp2SysCtrl", 
+                "sysctrl_len": 1520
+            }
+        }, 
+        "work_begin_exit_count": 0, 
+        "work_end_ckpt_count": 0, 
+        "memories": [
+            "system.apc.DM0", 
+            "system.apc.DM1", 
+            "system.apc.DM2", 
+            "system.apc.DM3", 
+            "system.apc.DM4", 
+            "system.apc.DM5", 
+            "system.apc.DM6", 
+            "system.apc.DM7", 
+            "system.apc.ape0.mpu0.IM", 
+            "system.apc.ape0.spu.Stack", 
+            "system.apc.ape0.spu.virtmem", 
+            "system.apc.ddr"
+        ], 
+        "work_begin_ckpt_count": 0, 
+        "clk_domain": {
+            "name": "clk_domain", 
+            "clock": [
+                1000
+            ], 
+            "init_perf_level": 0, 
+            "voltage_domain": {
+                "name": "voltage_domain", 
+                "eventq_index": 0, 
+                "voltage": [
+                    1.0
+                ], 
+                "cxx_class": "VoltageDomain", 
+                "path": "system.clk_domain.voltage_domain", 
+                "type": "VoltageDomain"
+            }, 
+            "eventq_index": 0, 
+            "cxx_class": "SrcClockDomain", 
+            "path": "system.clk_domain", 
+            "type": "SrcClockDomain", 
+            "domain_id": -1
+        }, 
+        "mem_ranges": [], 
+        "exit_on_work_items": false, 
+        "eventq_index": 0, 
+        "m5ops_base": 0, 
+        "dvfs_handler": {
+            "enable": false, 
+            "name": "dvfs_handler", 
+            "sys_clk_domain": "system.clk_domain", 
+            "transition_latency": 100000000, 
+            "eventq_index": 0, 
+            "cxx_class": "DVFSHandler", 
+            "domains": [], 
+            "path": "system.dvfs_handler", 
+            "type": "DVFSHandler"
+        }, 
+        "work_end_exit_count": 0, 
+        "type": "System", 
+        "cache_line_size": 64, 
+        "memdev": {
+            "system": "system", 
+            "ret_data8": 255, 
+            "name": "memdev", 
+            "warn_access": "", 
+            "pio": {
+                "peer": "system.membus.master[0]", 
+                "is_source": "False", 
+                "role": "GEM5 RESPONDER"
+            }, 
+            "ret_bad_addr": false, 
+            "pio_latency": 100000, 
+            "clk_domain": "system.clk_domain", 
+            "power_model": [], 
+            "fake_mem": false, 
+            "pio_size": 8, 
+            "ret_data32": 4294967295, 
+            "update_data": false, 
+            "eventq_index": 0, 
+            "ret_data64": 18446744073709551615, 
+            "power_state": {
+                "default_state": "UNDEFINED", 
+                "name": "power_state", 
+                "possible_states": [], 
+                "clk_gate_min": 1000, 
+                "clk_gate_bins": 20, 
+                "eventq_index": 0, 
+                "clk_gate_max": 1000000000000, 
+                "cxx_class": "PowerState", 
+                "path": "system.memdev.power_state", 
+                "type": "PowerState", 
+                "leaders": []
+            }, 
+            "cxx_class": "IsaFake", 
+            "path": "system.memdev", 
+            "pio_addr": 0, 
+            "type": "IsaFake", 
+            "ret_data16": 65535
+        }, 
+        "workload": null, 
+        "work_cpus_ckpt_count": 0, 
+        "readfile": "", 
+        "path": "system", 
+        "mem_mode": "atomic", 
+        "name": "system", 
+        "init_param": 0, 
+        "system_port": {
+            "peer": "system.membus.slave[0]", 
+            "is_source": "True", 
+            "role": "GEM5 REQUESTER"
+        }, 
+        "multi_thread": false, 
+        "num_work_ids": 16, 
+        "work_item_id": -1, 
+        "work_begin_cpu_id_exit": -1
+    }, 
+    "time_sync_period": 100000000000, 
+    "eventq_index": 0, 
+    "time_sync_spin_threshold": 100000000, 
+    "cxx_class": "Root", 
+    "path": "root", 
+    "time_sync_enable": false, 
+    "type": "Root", 
+    "full_system": false
+}
