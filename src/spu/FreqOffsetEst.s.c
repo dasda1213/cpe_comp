@@ -3,7 +3,7 @@
 #include "FreqOffsetEst.h"
 
 
-void FreqOffsetEst(int* ConfigBaseAddr,int round,int init_4block_gap,int LGA,int LPART,int LBlock,int NBlock,int thetaAddr,int InputAddr0,int GaAddr,int LUTAddr,int OutputAddr0,int fo_initAddr){
+void FreqOffsetEst(int* ConfigBaseAddr,int round,long fo_init,int LGA,int LPART,int LBlock,int NBlock,int thetaAddr,int InputAddr0,int GaAddr,int LUTAddr,int OutputAddr0,int fo_initAddr){
 
 	int *Para = ConfigBaseAddr;
 
@@ -11,14 +11,14 @@ void FreqOffsetEst(int* ConfigBaseAddr,int round,int init_4block_gap,int LGA,int
 	int AddrOffset = LBlock << 2;
 	int AddrOffset1 = 0x504 << 2;
 	int AddrOffset2 = 0x400 << 4;//1024*4 point
-	int AddrOffset3 = (4*LBlock*init_4block_gap) << 2;
+	//int AddrOffset3 = (4*LBlock*init_4block_gap) << 2;
 
 	Para[0] = NBlock >> 2;
 	Para[1] = LPART>> 4;
 	Para[2] = 2*LGA>>4;
 	Para[3] = 4*LBlock >>7;//1024*4/128
 	//Para[4] = (LBlock >>7)*init_4block_gap;//1024*gap/128
-	Para[4] = init_4block_gap;
+	//Para[4] = init_4block_gap;
 
 	//input Symbol0
 	Para[16*1+0] = InputAddr0 + AddrOffset;
@@ -45,9 +45,12 @@ void FreqOffsetEst(int* ConfigBaseAddr,int round,int init_4block_gap,int LGA,int
 	Para[16*5+0] = OutputAddr0;
 
 	//input 旋转
-	Para[16*8+0] = InputAddr0+AddrOffset1+AddrOffset2*round+AddrOffset3 ;
-	Para[16*8+1] = InputAddr0+AddrOffset1+AddrOffset2*round+AddrOffset3 ;
-	Para[16*8+2] = InputAddr0+AddrOffset1+AddrOffset2*round+AddrOffset3 ;
+	Para[16*8+0] = InputAddr0;
+	Para[16*8+1] = InputAddr0;
+	Para[16*8+2] = InputAddr0;
+	//Para[16*8+0] = InputAddr0+AddrOffset1+AddrOffset2*round;
+	//Para[16*8+1] = InputAddr0+AddrOffset1+AddrOffset2*round;
+	//Para[16*8+2] = InputAddr0+AddrOffset1+AddrOffset2*round;
 	Para[16*8+4] = 0x40;
 	Para[16*8+5] = 0x40;
 	Para[16*8+6] = (LBlock*4) << 2;
@@ -60,6 +63,9 @@ void FreqOffsetEst(int* ConfigBaseAddr,int round,int init_4block_gap,int LGA,int
 	Para[16*15+0] = OutputAddr0+AddrOffset1;
 	Para[16*15+1] = OutputAddr0+AddrOffset1;
 	Para[16*15+2] = OutputAddr0+AddrOffset1;
+	//Para[16*15+0] = OutputAddr0+AddrOffset1+AddrOffset2*round;
+	//Para[16*15+1] = OutputAddr0+AddrOffset1+AddrOffset2*round;
+	//Para[16*15+2] = OutputAddr0+AddrOffset1+AddrOffset2*round;
 	Para[16*15+4] = 0x40;
 	Para[16*15+5] = 0x40;
 	Para[16*15+6] = (LBlock*4) << 2;
@@ -85,6 +91,9 @@ void FreqOffsetEst(int* ConfigBaseAddr,int round,int init_4block_gap,int LGA,int
 	Para[16*17+5] = 0x40;
 	Para[16*17+6] = (LBlock*4) << 2;
 	Para[16*17+10] = (NBlock << 14) + (NBlock>>2) ;
+
+	//fo_init_new
+	Para[16*18+0] = fo_init;
 
 
 

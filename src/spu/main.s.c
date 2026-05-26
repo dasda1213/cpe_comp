@@ -56,17 +56,16 @@ int main()
 	int LPART=128;
 	int LBlock = 1024;
 	int NBlock = 8;
-	int round=10;
-	int init_4block_gap=0;
+	int round=16;
 	int spu_start = 0;
 	int spu_end = 0;
+	long fo_init=0;
 	int mpu_start = 0;
 	int mpu_end = 0;
 
 	spu_start = tick();
 	//FreqOffsetEst(ConfigBaseAddr,NPort,NRE,NAnt,FactorRecip,FactorF,FactorID,MPU_ADDR(InputAddr0),InputAddr1,LUTAddr,OutputAddr0,OutputAddr1);
-	//FreqOffsetEst(ConfigBaseAddr,LGA,LPART,LBlock,NBlock,MPU_ADDR(thetaAddr),MPU_ADDR(InputAddr0),MPU_ADDR(GaAddr),MPU_ADDR(LUTAddr),MPU_ADDR(OutputAddr0),MPU_ADDR(fo_initAddr));
-	get_fo_est(Configfo_est_Addr,LGA,LPART,LBlock,NBlock,MPU_ADDR(GaAddr),MPU_ADDR(LUTAddr),OutputAddr0,MPU_ADDR(fo_initAddr));
+	get_fo_est(Configfo_est_Addr,LGA,LPART,LBlock,NBlock,MPU_ADDR(GaAddr),MPU_ADDR(LUTAddr),OutputAddr0);
 	SVRReg[0] = MPU_ADDR(Configfo_est_Addr);
 	spu_end = tick();
 	printf("spu runs = %d\n", spu_end - spu_start);
@@ -74,11 +73,12 @@ int main()
 	get_fo_estAsm(SVRReg);
 	a = __ucps2_getStatB();
 	__ucps2_delay();
-	for(int i=0;i<round;i++){
-		FreqOffsetEst(ConfigBaseAddr,i,init_4block_gap,LGA,LPART,LBlock,NBlock,MPU_ADDR(thetaAddr),MPU_ADDR(InputAddr0),MPU_ADDR(GaAddr),MPU_ADDR(LUTAddr),OutputAddr0,MPU_ADDR(fo_initAddr));
+	//for(int i=0;i<round;i++){
+		fo_init=angle_multiply_saturate((long)OutputAddr0[0], 8*75);
+		FreqOffsetEst(ConfigBaseAddr,75,fo_init,LGA,LPART,LBlock,NBlock,MPU_ADDR(thetaAddr),MPU_ADDR(InputAddr0),MPU_ADDR(GaAddr),MPU_ADDR(LUTAddr),OutputAddr0,MPU_ADDR(fo_initAddr));
 		SVRReg[0] = MPU_ADDR(ConfigBaseAddr);
 		FreqOffsetEstAsm(SVRReg);
-	}
+	//}
 	mpu_end = tick();
 	printf("mpu  runs=%d\n", mpu_end - mpu_start);
 

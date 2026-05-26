@@ -26,9 +26,9 @@ FreqOffsetEstAsm:
 	BIU1:Load(T0)(A++) -> M[11](W1)(Mode0)||R2:M[3]->SHU2.T6(Mode0)||R3:M[3]->SHU3.T6(Mode0)||R5:WriteConf(Mfetch)->KI[0-15](Mode0);//-12868
 	BIU1:Load(T0)(A++) -> M[12](W1)(Mode0);//25736
 	BIU1:Load(T0)(A++) -> M[16](W1)(Mode0);//output0
-	BIU1:Load(T0)(A++) -> M[17](W1)(Mode0);//fo_init
+	BIU1:Load(T0)(A++) -> M[17](W1)(Mode0);//fo_initAddr
 	BIU1:Load(T0)(A++) -> M[18](W1)(Mode0);//Ga_Load
-	BIU1:Load(T0)(A++) -> M[19](W1)(Mode0);//51742
+	BIU1:Load(T0)(A++) -> M[19](W1)(Mode0);//fo_init_new
 	//R0:M[1]->BIU0.T0(Mode0);
 	R1:M[5] -> BIU1.T0;//fo_estAddr
 	R0:PreConfig(M[14])(Mode0)||R2:PreConfig(M[14])(Mode0);//latch
@@ -49,42 +49,11 @@ FreqOffsetEstAsm:
 	BIU3:Load(T0)(A++) -> M[59](W1)(Mode0);//load fo_init
 	R0:M[4] -> BIU0.T2||R1:M[4] -> BIU1.T2||R2:M[4] -> BIU2.T2||R3:M[4] -> BIU3.T2||R5:M[15] -> BIU1.T0;
 	MFetch:REPEAT @(34);
-	R0:M[58] -> IMA0.T0||R1:M[19] -> IMA0.T2;
-	R0:M[59] -> IMA1.T0||R1:M[19] -> IMA0.T2;
+	R0:M[58] -> IMA0.T0;
+	R0:M[19] -> IMA1.T0;
 	NOP;
 	NOP;
 	NOP;
-	//IMA0:T0 << 16(W)(T) -> IMA0.T0;   // 每 Word 低 Short → 高 16 位, 低 16 位置零
-  	//IMA0:Ttmp >> 16(W) -> IMA0.T0; // 算术右移 → 符号位自动填充高 16 位
-	/*
-	IMA0:V(0) -> IMA0.T1||IMA1:V(0) -> IMA1.T1;
-	Mfetch:Lpto %fo_est @(KI3);
-
-	//IMA1:T0+Ttmp(W) -> IMA1.T1(Mode0);
-	//IMA1:ModAdd(Ttmp,T2)(W) -> IMA1.T1;
-
-	Mfetch:Lpto %fo_est_init @(KI4);
-	IMA0:T0+Ttmp(W) -> IMA0.T1(Mode0);
-	IMA0:ModAdd(Ttmp,T2)(W) -> IMA0.T1;
-
-	fo_est_init:
-
-	fo_est:
-
-  	R0:M[19] -> IMA0.T2;     // T2 =  2π  (TWO_PI_Q)
-  	R0:M[8] -> IMA0.T3;     // T3 = -π   (-PI_Q)
-  	R0:M[7] -> IMA0.T1;     // T1 =  π   (PI_Q)
-  	// 计算两支备选值
-  	IMA0:T0 - T2(W) -> IMA0.T4;    // T4 = r - 2π
-  	IMA0:T0 + T2(W) -> IMA0.T5;    // T5 = r + 2π
-  	// step1: if (r >= π) 选 r-2π，否则选 r
-  	IMA0:CompSel(T0, T1, T4, T0)(W) -> IMA0.T2;
-  	//      若 T0 >= T1(π) → 取 T4(r-2π)
-  	//      否则           → 取 T0(r)
- 	// step2: if (-π >= r') 选 r'+2π，否则选 r'  (即 r' <= -π 时 +2π)
-  	IMA0:CompSel(T3, Ttmp, T5, Ttmp)(W) -> IMA0.T0;
-  	*/
-
 	IMA0:T0 >> 7(W)->IMA0.T1||IMA1:T0 >> 7(W)->IMA1.T1||IMA2:T0 >> 7(W)->IMA2.T1||IMA3:T0 >> 7(W)->IMA3.T1;
 	IMA0:Ttmp << 2(W) -> BIU0.T3||IMA1:Ttmp << 2(W) -> BIU1.T3||IMA2:Ttmp << 2(W) -> BIU2.T3||IMA3:Ttmp << 2(W) -> BIU3.T3;
 	IMA0:V(0) -> SHU0.T1||IMA1:V(0) -> SHU1.T1||IMA2:V(0) -> SHU2.T1||IMA3:V(0) -> SHU3.T1;
@@ -121,7 +90,6 @@ FreqOffsetEstAsm:
 	NOP;
 	NOP;
 
-
 	Mfetch:Lpto %StoreCyc2 @(KI3);  // 外层32组，KI3=32
 	Mfetch:Lpto %StoreCyc1 @(KI1);  // 内层8次，KI1=8
 	BIU1:Wait 0 || IMA0:Wait 10 || BIU2:Wait 15 ;
@@ -134,12 +102,10 @@ FreqOffsetEstAsm:
     // 每组结束后更新旋转因子
 	IMA0:0 + T1*T2(ShiftMode0)(C)(S)(SSS) -> IMA0.T1(Mode0);  // T1 = T1 * T2
 
+
 	StoreCyc2:
 	MFetch:REPEAT @(20);
-	/*IMA0:T1 -> BIU3.T3(Mode0);
-	NOP;
-	NOP;
-	BIU3:Store(T3,T0)(A++)(Mask);*/
+
 	MFetch:REPEAT @(34);
 	NOP;
     //BLOCKCyc:

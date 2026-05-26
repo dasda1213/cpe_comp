@@ -3,7 +3,7 @@
 #include "get_fo_est.h"
 
 
-void get_fo_est(int* ConfigBaseAddr,int LGA,int LPART,int LBlock,int NBlock,int GaAddr,int LUTAddr,int OutputAddr0,int fo_initAddr){
+void get_fo_est(int* ConfigBaseAddr,int LGA,int LPART,int LBlock,int NBlock,int GaAddr,int LUTAddr,int OutputAddr0){
 
 	int *Para = ConfigBaseAddr;
 

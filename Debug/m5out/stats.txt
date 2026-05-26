@@ -1,0 +1,169 @@
+
+---------- Begin Simulation Statistics ----------
+final_tick                               18446744073709551616                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
+host_mem_usage                                4035160                       # Number of bytes of host memory used
+host_seconds                                  4372.22                       # Real time elapsed on the host
+host_tick_rate                           4219078797412673                       # Simulator tick rate (ticks/s)
+sim_freq                                 1000000000000                       # Frequency of simulated ticks
+sim_seconds                              18446744.073710                       # Number of seconds simulated
+sim_ticks                                18446744073709551616                       # Number of ticks simulated
+system.membus.snoop_filter.hit_multi_requests            0                       # Number of requests hitting in the snoop filter with multiple (>1) holders of the requested data.
+system.membus.snoop_filter.hit_multi_snoops            0                       # Number of snoops hitting in the snoop filter with multiple (>1) holders of the requested data.
+system.membus.snoop_filter.hit_single_requests            0                       # Number of requests hitting in the snoop filter with a single holder of the requested data.
+system.membus.snoop_filter.hit_single_snoops            0                       # Number of snoops hitting in the snoop filter with a single holder of the requested data.
+system.membus.snoop_filter.tot_requests             0                       # Total number of requests made to the snoop filter.
+system.membus.snoop_filter.tot_snoops               0                       # Total number of snoops made to the snoop filter.
+system.apc.ape0.printer.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.mpu0.biu_bus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.mpu0.biu_to_DM.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.mpu0.IM.bytes_read::.apc.ape0.mpu0       598256                       # Number of bytes read from this memory
+system.apc.ape0.mpu0.IM.bytes_read::total       598256                       # Number of bytes read from this memory
+system.apc.ape0.mpu0.IM.bytes_inst_read::.apc.ape0.mpu0       598256                       # Number of instructions bytes read from this memory
+system.apc.ape0.mpu0.IM.bytes_inst_read::total       598256                       # Number of instructions bytes read from this memory
+system.apc.ape0.mpu0.IM.num_reads::.apc.ape0.mpu0        74782                       # Number of read requests responded to by this memory
+system.apc.ape0.mpu0.IM.num_reads::total        74782                       # Number of read requests responded to by this memory
+system.apc.ape0.mpu0.IM.bw_read::.apc.ape0.mpu0            0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.ape0.mpu0.IM.bw_read::total              0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.ape0.mpu0.IM.bw_inst_read::.apc.ape0.mpu0            0                       # Instruction read bandwidth from this memory (bytes/s)
+system.apc.ape0.mpu0.IM.bw_inst_read::total            0                       # Instruction read bandwidth from this memory (bytes/s)
+system.apc.ape0.mpu0.IM.bw_total::.apc.ape0.mpu0            0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.ape0.mpu0.IM.bw_total::total             0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.ape0.mpu0.IM.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.mpu0.ibus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.mpu0.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.num_bundles_executed         4836                       # Number of bundles executed by this SPU
+system.apc.ape0.spu.num_operations_executed         7945                       # Number of operations executed by this SPU
+system.apc.ape0.spu.total_run_ticks          14218000                       # Total number of ticks this SPU runs
+system.apc.ape0.spu.numTestsLoaded                  0                       # Number of loaded tests
+system.apc.ape0.spu.numTestsChecked                 0                       # Number of tests checked
+system.apc.ape0.spu.numTestsPassed                  0                       # Number of tests passed
+system.apc.ape0.spu.numTestsFailed                  0                       # Number of tests failed
+system.apc.ape0.spu.agu0_to_virt.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu1_to_DM.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.virtmem.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu0_to_DM.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.stack_mem_bus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.ibus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.imem_bridge.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu1_to_stack.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu1_to_dev.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.io_bus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu0_to_stack.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu1_to_virt.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu0_to_dev.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu1_bus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.Stack.bytes_read::.apc.ape0.spu         4562                       # Number of bytes read from this memory
+system.apc.ape0.spu.Stack.bytes_read::total         4562                       # Number of bytes read from this memory
+system.apc.ape0.spu.Stack.bytes_written::.apc.ape0.spu         4909                       # Number of bytes written to this memory
+system.apc.ape0.spu.Stack.bytes_written::total         4909                       # Number of bytes written to this memory
+system.apc.ape0.spu.Stack.num_reads::.apc.ape0.spu         1194                       # Number of read requests responded to by this memory
+system.apc.ape0.spu.Stack.num_reads::total         1194                       # Number of read requests responded to by this memory
+system.apc.ape0.spu.Stack.num_writes::.apc.ape0.spu         1262                       # Number of write requests responded to by this memory
+system.apc.ape0.spu.Stack.num_writes::total         1262                       # Number of write requests responded to by this memory
+system.apc.ape0.spu.Stack.bw_read::.apc.ape0.spu            0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.ape0.spu.Stack.bw_read::total            0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.ape0.spu.Stack.bw_write::.apc.ape0.spu            0                       # Write bandwidth from this memory (bytes/s)
+system.apc.ape0.spu.Stack.bw_write::total            0                       # Write bandwidth from this memory (bytes/s)
+system.apc.ape0.spu.Stack.bw_total::.apc.ape0.spu            0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.ape0.spu.Stack.bw_total::total            0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.ape0.spu.Stack.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.virtmem_bus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.spu.agu0_bus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0.vio.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.sharemem.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.timer0.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.timer1.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ddr.bytes_read::.apc.ape0.spu        55920                       # Number of bytes read from this memory
+system.apc.ddr.bytes_read::total                55920                       # Number of bytes read from this memory
+system.apc.ddr.bytes_inst_read::.apc.ape0.spu        55920                       # Number of instructions bytes read from this memory
+system.apc.ddr.bytes_inst_read::total           55920                       # Number of instructions bytes read from this memory
+system.apc.ddr.num_reads::.apc.ape0.spu          3495                       # Number of read requests responded to by this memory
+system.apc.ddr.num_reads::total                  3495                       # Number of read requests responded to by this memory
+system.apc.ddr.bw_read::.apc.ape0.spu               0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.ddr.bw_read::total                       0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.ddr.bw_inst_read::.apc.ape0.spu            0                       # Instruction read bandwidth from this memory (bytes/s)
+system.apc.ddr.bw_inst_read::total                  0                       # Instruction read bandwidth from this memory (bytes/s)
+system.apc.ddr.bw_total::.apc.ape0.spu              0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.ddr.bw_total::total                      0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.ddr.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.dbus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.shm_queue.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.dev.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.DM0.bytes_read::.apc.ape0.mpu0        24616                       # Number of bytes read from this memory
+system.apc.DM0.bytes_read::.apc.ape0.spu           68                       # Number of bytes read from this memory
+system.apc.DM0.bytes_read::total                24684                       # Number of bytes read from this memory
+system.apc.DM0.num_reads::.apc.ape0.mpu0        24616                       # Number of read requests responded to by this memory
+system.apc.DM0.num_reads::.apc.ape0.spu            62                       # Number of read requests responded to by this memory
+system.apc.DM0.num_reads::total                 24678                       # Number of read requests responded to by this memory
+system.apc.DM0.bw_read::.apc.ape0.mpu0              0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM0.bw_read::.apc.ape0.spu               0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM0.bw_read::total                       0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM0.bw_total::.apc.ape0.mpu0             0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM0.bw_total::.apc.ape0.spu              0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM0.bw_total::total                      0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM0.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.DM1.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.DM2.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.DM3.bytes_read::.apc.ape0.mpu0         1984                       # Number of bytes read from this memory
+system.apc.DM3.bytes_read::.apc.ape0.spu          256                       # Number of bytes read from this memory
+system.apc.DM3.bytes_read::total                 2240                       # Number of bytes read from this memory
+system.apc.DM3.bytes_written::.apc.ape0.spu          296                       # Number of bytes written to this memory
+system.apc.DM3.bytes_written::total               296                       # Number of bytes written to this memory
+system.apc.DM3.num_reads::.apc.ape0.mpu0         1984                       # Number of read requests responded to by this memory
+system.apc.DM3.num_reads::.apc.ape0.spu             4                       # Number of read requests responded to by this memory
+system.apc.DM3.num_reads::total                  1988                       # Number of read requests responded to by this memory
+system.apc.DM3.num_writes::.apc.ape0.spu           74                       # Number of write requests responded to by this memory
+system.apc.DM3.num_writes::total                   74                       # Number of write requests responded to by this memory
+system.apc.DM3.bw_read::.apc.ape0.mpu0              0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM3.bw_read::.apc.ape0.spu               0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM3.bw_read::total                       0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM3.bw_write::.apc.ape0.spu              0                       # Write bandwidth from this memory (bytes/s)
+system.apc.DM3.bw_write::total                      0                       # Write bandwidth from this memory (bytes/s)
+system.apc.DM3.bw_total::.apc.ape0.mpu0             0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM3.bw_total::.apc.ape0.spu              0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM3.bw_total::total                      0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM3.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.DM4.bytes_read::.apc.ape0.mpu0           64                       # Number of bytes read from this memory
+system.apc.DM4.bytes_read::.apc.ape0.spu            4                       # Number of bytes read from this memory
+system.apc.DM4.bytes_read::total                   68                       # Number of bytes read from this memory
+system.apc.DM4.bytes_written::.apc.ape0.mpu0        16448                       # Number of bytes written to this memory
+system.apc.DM4.bytes_written::total             16448                       # Number of bytes written to this memory
+system.apc.DM4.num_reads::.apc.ape0.mpu0           64                       # Number of read requests responded to by this memory
+system.apc.DM4.num_reads::.apc.ape0.spu             1                       # Number of read requests responded to by this memory
+system.apc.DM4.num_reads::total                    65                       # Number of read requests responded to by this memory
+system.apc.DM4.num_writes::.apc.ape0.mpu0        16448                       # Number of write requests responded to by this memory
+system.apc.DM4.num_writes::total                16448                       # Number of write requests responded to by this memory
+system.apc.DM4.bw_read::.apc.ape0.mpu0              0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM4.bw_read::.apc.ape0.spu               0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM4.bw_read::total                       0                       # Total read bandwidth from this memory (bytes/s)
+system.apc.DM4.bw_write::.apc.ape0.mpu0             0                       # Write bandwidth from this memory (bytes/s)
+system.apc.DM4.bw_write::total                      0                       # Write bandwidth from this memory (bytes/s)
+system.apc.DM4.bw_total::.apc.ape0.mpu0             0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM4.bw_total::.apc.ape0.spu              0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM4.bw_total::total                      0                       # Total bandwidth to/from this memory (bytes/s)
+system.apc.DM4.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.DM5.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.DM6.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.DM7.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.csu.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.sysctrl.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.io_bus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.apc.ape0_to_dev.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.clk_domain.clock                          1000                       # Clock period in ticks
+system.clk_domain.voltage_domain.voltage            1                       # Voltage in Volts
+system.memdev.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+system.membus.snoops                                0                       # Total snoops (count)
+system.membus.snoopTraffic                          0                       # Total snoop traffic (bytes)
+system.membus.snoop_fanout::samples                 0                       # Request fanout histogram
+system.membus.snoop_fanout::mean                  nan                       # Request fanout histogram
+system.membus.snoop_fanout::stdev                 nan                       # Request fanout histogram
+system.membus.snoop_fanout::underflows              0                       # Request fanout histogram
+system.membus.snoop_fanout::0                       0                       # Request fanout histogram
+system.membus.snoop_fanout::overflows               0                       # Request fanout histogram
+system.membus.snoop_fanout::min_value               0                       # Request fanout histogram
+system.membus.snoop_fanout::max_value               0                       # Request fanout histogram
+system.membus.snoop_fanout::total                   0                       # Request fanout histogram
+system.membus.power_state.pwrStateResidencyTicks::UNDEFINED 18446744073709551616                       # Cumulative time (in ticks) in various power states
+
+---------- End Simulation Statistics   ----------
